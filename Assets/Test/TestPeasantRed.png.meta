@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 0fd0f023bff4b504991894afac1b5a18
-timeCreated: 1477301897
+guid: 622273fadb2cb24448bf332c2528a243
+timeCreated: 1477457800
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TestPesant_0
-    21300002: TestPesant_1
-    21300004: TestPesant_2
-    21300006: TestPesant_3
-    21300008: TestPesant_4
-    21300010: TestPesant_5
-    21300012: TestPesant_6
-    21300014: TestPesant_7
-    21300016: TestPesant_8
-    21300018: TestPesant_9
-    21300020: Dead
+    21300000: TestPeasantRed_0
+    21300002: TestPeasantRed_1
+    21300004: TestPeasantRed_2
+    21300006: TestPeasantRed_3
+    21300008: TestPeasantRed_4
+    21300010: TestPeasantRed_5
+    21300012: TestPeasantRed_6
+    21300014: TestPeasantRed_7
+    21300016: TestPeasantRed_8
+    21300018: TestPeasantRed_9
+    21300020: TestPeasantRed_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -69,7 +69,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestPesant_0
+      name: TestPeasantRed_0
       rect:
         serializedVersion: 2
         x: 0
@@ -77,12 +77,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_1
+      name: TestPeasantRed_1
       rect:
         serializedVersion: 2
         x: 32
@@ -90,12 +90,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_2
+      name: TestPeasantRed_2
       rect:
         serializedVersion: 2
         x: 64
@@ -103,12 +103,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_3
+      name: TestPeasantRed_3
       rect:
         serializedVersion: 2
         x: 96
@@ -116,12 +116,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_4
+      name: TestPeasantRed_4
       rect:
         serializedVersion: 2
         x: 0
@@ -129,12 +129,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_5
+      name: TestPeasantRed_5
       rect:
         serializedVersion: 2
         x: 32
@@ -142,12 +142,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_6
+      name: TestPeasantRed_6
       rect:
         serializedVersion: 2
         x: 64
@@ -155,12 +155,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_7
+      name: TestPeasantRed_7
       rect:
         serializedVersion: 2
         x: 96
@@ -168,12 +168,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_8
+      name: TestPeasantRed_8
       rect:
         serializedVersion: 2
         x: 0
@@ -181,12 +181,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_9
+      name: TestPeasantRed_9
       rect:
         serializedVersion: 2
         x: 32
@@ -194,12 +194,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Dead
+      name: TestPeasantRed_10
       rect:
         serializedVersion: 2
         x: 64
@@ -207,7 +207,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

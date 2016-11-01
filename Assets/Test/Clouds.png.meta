@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: 0fd0f023bff4b504991894afac1b5a18
-timeCreated: 1477301897
+guid: 8651256881b424e4e9e4e28330b76cfe
+timeCreated: 1477332946
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TestPesant_0
-    21300002: TestPesant_1
-    21300004: TestPesant_2
-    21300006: TestPesant_3
-    21300008: TestPesant_4
-    21300010: TestPesant_5
-    21300012: TestPesant_6
-    21300014: TestPesant_7
-    21300016: TestPesant_8
-    21300018: TestPesant_9
-    21300020: Dead
+    21300000: Cloud_Wide_Wide
+    21300002: Cloud_Wide_Medium
+    21300004: Cloud_Round_Small_L
+    21300006: Cloud_Round_Small_R
+    21300008: Cloud_Medium_Medium_R
+    21300010: Cloud_Medium_Medium_L
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -69,63 +64,37 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestPesant_0
+      name: Cloud_Wide_Wide
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 48
+        width: 96
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TestPesant_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TestPesant_3
+      name: Cloud_Wide_Medium
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
-        width: 32
-        height: 32
+        y: 48
+        width: 64
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_4
+      name: Cloud_Round_Small_L
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -134,11 +103,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_5
+      name: Cloud_Round_Small_R
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -147,12 +116,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_6
+      name: Cloud_Medium_Medium_R
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
-        width: 32
+        y: 16
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -160,51 +129,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TestPesant_7
+      name: Cloud_Medium_Medium_L
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TestPesant_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TestPesant_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Dead
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
+        x: 128
+        y: 16
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

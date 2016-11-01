@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: 30b0dcb0bc52e2545ae8276d542c144f
+timeCreated: 1478039272
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Shoulder
+    21300002: Left_Arm
+    21300004: Right_Arm
+    21300006: Right_Leg
+    21300008: Left_Leg
+    21300010: Left_Knee
+    21300012: Right_knee
+    21300014: Body
+    21300016: Head
+    21300018: Wepon
+    21300020: Knight_Shoulder
+    21300022: Knight_Left_Arm
+    21300024: Knight_Right_Arm
+    21300026: Knight_Leg_Right
+    21300028: Knight_Leg_Left
+    21300030: Knight_Head
+    21300032: Knight_Body
+    21300034: Knight_Knee_Left
+    21300036: Knight_Knee_Right
+    21300038: Knight_Sword
+    21300040: GreatSword
+    21300042: Shoulder_R
+    21300044: Knight_Shoulder_R
+    21300046: Peasant2_Spear
+    21300048: Peasant2_Shoulder_L
+    21300050: Peasant2_Shoulder_R
+    21300052: Peasant2_Arm_L
+    21300054: Peasant2_Arm_R
+    21300056: Peasant2_Leg_R
+    21300058: Peasant2_Leg_L
+    21300060: Peasant2_Head
+    21300062: Peasant2_Body
+    21300064: Peasant2_Knee_L
+    21300066: Peasant2_Knee_R
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 512
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shoulder
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 60
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Left_Arm
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 56
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Right_Arm
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 52
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Right_Leg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 49
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Left_Leg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 46
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Left_Knee
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 44
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Right_knee
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 44
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 47
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 56
+        width: 7
+        height: 8
+      alignment: 9
+      pivot: {x: 0.56174624, y: 0.32298565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Wepon
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 44
+        width: 3
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 60
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Left_Arm
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 56
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Right_Arm
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 52
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Leg_Right
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 49
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Leg_Left
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 46
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Head
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 58
+        width: 6
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Body
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 47
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Knee_Left
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 44
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Knee_Right
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 44
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Sword
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 51
+        width: 4
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GreatSword
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 44
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shoulder_R
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 42
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight_Shoulder_R
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 42
+        width: 2
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Spear
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 44
+        width: 3
+        height: 19
+      alignment: 9
+      pivot: {x: 0.51515704, y: 0.42341152}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Shoulder_L
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 60
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Shoulder_R
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 42
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Arm_L
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 56
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Arm_R
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 52
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Leg_R
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 49
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Leg_L
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 46
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Head
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 56
+        width: 6
+        height: 7
+      alignment: 9
+      pivot: {x: 0.50757915, y: 0.3570802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Body
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 47
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Knee_L
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 44
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Peasant2_Knee_R
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 44
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
