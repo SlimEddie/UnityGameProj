@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 30b0dcb0bc52e2545ae8276d542c144f
-timeCreated: 1478039272
+timeCreated: 1478903716
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -38,6 +38,20 @@ TextureImporter:
     21300062: Peasant2_Body
     21300064: Peasant2_Knee_L
     21300066: Peasant2_Knee_R
+    21300068: Archer_Head
+    21300070: Archer_Body
+    21300072: Archer_Left_Knee
+    21300074: Archer_Right_Knee
+    21300076: Archer_Arrow
+    21300078: Archer_Shoulder_R
+    21300080: Archer_Shoulder_L
+    21300082: Archer_Left_Arm
+    21300084: Archer_Right_Arm
+    21300086: Archer_Right_Leg
+    21300088: Archer_Left_Leg
+    21300090: Archer_Bow1
+    21300092: Archer_Bow2
+    21300094: Archer_Bow3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -530,6 +544,188 @@ TextureImporter:
         height: 3
       alignment: 9
       pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Head
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 35
+        width: 8
+        height: 7
+      alignment: 9
+      pivot: {x: 0.50006616, y: 0.08719635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Body
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 24
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Left_Knee
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 21
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Right_Knee
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 21
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Arrow
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 28
+        width: 1
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Shoulder_R
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 19
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Shoulder_L
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 37
+        width: 2
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Left_Arm
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 33
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Right_Arm
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 29
+        width: 1
+        height: 3
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Right_Leg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 26
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Left_Leg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 23
+        width: 1
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Bow1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 27
+        width: 4
+        height: 12
+      alignment: 9
+      pivot: {x: 0.87819624, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Bow2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 28
+        width: 6
+        height: 10
+      alignment: 9
+      pivot: {x: 0.9232197, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Archer_Bow3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 29
+        width: 10
+        height: 8
+      alignment: 9
+      pivot: {x: 0.9484329, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
