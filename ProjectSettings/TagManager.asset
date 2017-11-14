@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - enemy
-  - player
-  - dmg
   - Player_Collider
+  - player
   - Enemy_Collider
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -45,7 +44,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Peasant
-    uniqueID: 1223495135
     locked: 0

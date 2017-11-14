@@ -48,7 +48,7 @@ public class MaimMenuController : MonoBehaviour {
                 }
             case 4: //Next level buttons
                 {
-                    Data_M.D_Base.UlockedLevel[SceneManager.GetActiveScene().buildIndex] = true;// Current scene
+                    Data_M.D_Base.UlockedLevel++;// Current scene
                     Data_M.SaveTheGame();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
                     break;

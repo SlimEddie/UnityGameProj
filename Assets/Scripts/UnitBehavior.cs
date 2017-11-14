@@ -13,6 +13,7 @@ public class UnitBehavior : MonoBehaviour {
     public UnitStats MyStats;
     public GameObject AgroTrigger;
 
+
     public GameObject SpecialObjectInstance;
     public Transform SpecialObjectInstanceLocation;
 
@@ -69,7 +70,8 @@ public class UnitBehavior : MonoBehaviour {
         //IF DEAD
         else
         {
-            AgroTrigger.SetActive(false);
+            Dead();
+            //AgroTrigger.SetActive(false);
 
         }
 	} // End of fixed update
@@ -88,6 +90,7 @@ public class UnitBehavior : MonoBehaviour {
         if (!MyStats.FetchUnitDeathState() && !TargetStats.FetchUnitDeathState()) //If I am not dead and my enemy is not dead.
         {
             InvokeAttackActions(); // Invokes all actions related to attack - will also reinvoke Attack.
+            
         }
         else if(!MyStats.FetchUnitDeathState() && TargetStats.FetchUnitDeathState()) //I f I am not dead and enemy is dead.
         {
@@ -132,8 +135,8 @@ public class UnitBehavior : MonoBehaviour {
 
     private void MeeleDmg()
     {
-
-         Invoke("InvokeableDmg", AttackAnimDuration / 2);
+        MyStats.AC.PlayEffect(MyStats.AttackSoundEffectName);
+        Invoke("InvokeableDmg", AttackAnimDuration / 2);
         // move it to target detection or smth to prevent constant calls to get component
         
         /*DO SOME WORKING HERE*/
@@ -154,13 +157,18 @@ public class UnitBehavior : MonoBehaviour {
 
     private void SpawnArrow()
     {
-        if (!MyStats.FetchUnitDeathState())Instantiate(SpecialObjectInstance, SpecialObjectInstanceLocation.position, Quaternion.Euler(new Vector3(0, 0,-90)));
+        MyStats.AC.PlayEffect(MyStats.AttackSoundEffectName);
+        if (MyStats.Enemy)
+            if (!MyStats.FetchUnitDeathState()) Instantiate(SpecialObjectInstance, SpecialObjectInstanceLocation.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+        if(!MyStats.Enemy)
+            if (!MyStats.FetchUnitDeathState())Instantiate(SpecialObjectInstance, SpecialObjectInstanceLocation.position, Quaternion.Euler(new Vector3(0, 0,-90)));
 
     }
 
     private void InvokeableDmg()
     {
-        if(!MyStats.FetchUnitDeathState())Target[0].parent.GetComponent<UnitStats>().IncrementHealth(-MyStats.FetchDmg());
+        if (!MyStats.FetchUnitDeathState())
+            Target[0].parent.GetComponent<UnitStats>().ParseAttack(MyStats.BonusDmgArmored,MyStats.bonusDmgUnArmored,MyStats.FetchDmg(),MyStats.DmgBonus);// IncrementHealth(-MyStats.FetchDmg());
     }
 
 
@@ -168,8 +176,8 @@ public class UnitBehavior : MonoBehaviour {
 
     void Dead()
     {
+        this.gameObject.tag = "Dead";
         AgroTrigger.SetActive(false);
-
     }
     
 

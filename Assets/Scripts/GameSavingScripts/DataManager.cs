@@ -23,7 +23,7 @@ public class DataManager : MonoBehaviour {
 
     public bool FetchLevelState(int ID)
     {
-        if(D_Base.UlockedLevel[ID])
+        if(D_Base.UlockedLevel <= ID)
             return true;
         return false;
     }

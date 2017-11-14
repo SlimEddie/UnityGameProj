@@ -40,11 +40,11 @@ public class ScoreController : MonoBehaviour {
     // Should only be called if there is enough gold
     public void IncrementGold(float ammount)
     {
-        Gold_Anim_Text_Obj.text = ammount.ToString();
+        Gold_Anim_Text_Obj.text = Mathf.Round(ammount).ToString();
         Gold_Anim_Obj.SetActive(true);
-
         Gold_Anim_Obj_Animator.Play("Score_Increment");
-        Gold += ammount;
+
+        Gold = Mathf.Round(Gold+ammount);
         UI_Text_Controller.UpdateScore_Gold(FetchGold());
     }
     public void IncrementHp(float ammount)
@@ -55,10 +55,10 @@ public class ScoreController : MonoBehaviour {
             Debug.Log("Adding");
         }
         else
-            HP_Anim_Text_Obj.text = ammount.ToString();
+        HP_Anim_Text_Obj.text = Mathf.Round(ammount).ToString();
         HP_Anim_Obj.SetActive(true);
         HP_Anim_Obj_Animator.Play("Score_Increment_Hp");
-        YourHp += ammount;
+        YourHp = Mathf.Round(YourHp + ammount);
         UI_Text_Controller.UpdateScore_YourHp(FetchYourHp());
         if(YourHp < 1)
         {

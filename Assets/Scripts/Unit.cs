@@ -5,21 +5,21 @@ using System.Collections;
 public class Unit  {
     public GameObject UnitPrefab;
     public float Cost;
-    public float SuccesPercentage;
-    public float SliderSpeed;
-   
+    public int Units_Awailable;
+    public int Units_Max_Awailable;
+
 
     public float FetchCost()
     {
         return Cost;
     }
+    public int Fetch_Units_Awailable()
+    {
+        return Units_Awailable;
+    }
+
+
+
+
 	
-    public float FetchSuccessPerecentage()
-    {
-        return SuccesPercentage;
-    }
-    public float FetchSliderSpeed()
-    {
-        return SliderSpeed;
-    }
 }
