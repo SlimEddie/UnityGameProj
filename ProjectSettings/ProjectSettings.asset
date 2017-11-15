@@ -224,7 +224,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/NewDesktop/Coding/Unity projects/hitproj/KeyStoreKey.keystore
+  AndroidKeystoreName: C:/Users/LaurynasPc/Desktop/Unity project/UnityGameProj/KeyStoreKey.keystore
   AndroidKeyaliasName: slimeddie
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

@@ -12,7 +12,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 a1f155ebbcd09773abf7922f94874ec3 Assembly-CSharp.dll:.Persistant_Data
-6624fa2f55112494cfebf247353fea1f Assembly-CSharp.dll:.DataManager
+02166c713c00b6adfdbc172b8fcf7a39 Assembly-CSharp.dll:.DataManager
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -116,7 +116,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 0ad6ac5e9417c95d9b0ff10b56a0217f Assembly-CSharp.dll:.UpdateButtonState
 f65887ae9583080fb3cf16bc97ba7365 Assembly-CSharp.dll:.UnifiedInputSystem
 5c33875949ceec2b1eee18998bc7dd56 Assembly-CSharp.dll:.SliderController
-0974ba848e5594637d42698a6277e11b Assembly-CSharp.dll:.SaveLoadManager
+2b33663a29e84c9089f558a50addde9c Assembly-CSharp.dll:.SaveLoadManager
 e8d5b4c19e9798387d6b93f1d05b2086 Assembly-CSharp.dll:.LevelBehavior
 b7537cf95e4c3ae1bc48b73071c53735 Assembly-CSharp.dll:.AudioController
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
