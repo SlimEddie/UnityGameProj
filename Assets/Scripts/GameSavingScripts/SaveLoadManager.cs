@@ -10,6 +10,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Text;
+using UnityEngine.SceneManagement;
 
 public class SaveLoadManager : MonoBehaviour {
 
@@ -17,129 +18,135 @@ public class SaveLoadManager : MonoBehaviour {
     public bool saving = false;
     public string fileName = "WSASsave";
     public bool initialization = true;
-    public Database gameData;
+    public Database gameData = new Database();
 
+    public bool resetCloudData = false;
+    public bool saved = false;
+    public bool editorMode = false;
     private bool firstTimeLocal = false;
     private bool firstTimeCloud = false;
 
-    private DateTime mStartTime;
+    private DateTime startTime;
     private TimeSpan mTotalPlayingTime;
-    private TimeSpan playedTime;
+    private TimeSpan playedTimeLocal;
 
     // Use this for initialization
     void Start () {
+
         status_ui_txt.text = "Connecting to Google play games";
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
 
-        #region FirstTimeSaving
-        if (!PlayerPrefs.HasKey(fileName)) // If no save - set key to clean
-            PlayerPrefs.SetString(fileName, "0");
-        if (!PlayerPrefs.HasKey("IsFirstTime")) //tells us if it's the first time that this game has been launched after install - 0 = no, 1 = yes 
-        {
-            PlayerPrefs.SetInt("IsFirstTime", 1);
-            firstTimeLocal = true;
-        }
-        #endregion
-       
+        PlayerPrefs.DeleteAll();
+        //Records start of the session for play time keeping.
+        startTime = DateTime.Now;
 
+        //Try to load local here
+        TryLoadLocal();
 
         Social.localUser.Authenticate((bool success) => {
             if (success)
             {
-                status_ui_txt.text = "Online mode."; /// Do stuff if connected
-          
-                OpenSavedGame(fileName); // Stuff that opens save game - do this also when saving I guess.
+                if (resetCloudData)
+                    DeleteGameData(fileName);
+                else
+                {
+                    status_ui_txt.text = "Online mode. "; /// Do stuff if connected
+                    OpenSavedGame(fileName); // Stuff that opens save game - do this also when saving I guess.
+                }
             }
             else
             {
-                // will happen inside editor
-               
-                status_ui_txt.text = "Unable to connect to Google play games."; /// Do stuff if didn't connect
+                //will happen in editor or if authentication fails. Should also go on and play game.
+                editorMode = true;
+                status_ui_txt.text = "Unable to connect to Google play games or in editor. Loading game.";
+                SceneManager.LoadScene(1);
+
             }
         });
-
-
     }
 
 
 
     #region OpenSave
-    // Stuff that opens save---------------------------------------------------------------------------
+    public void Save()
+    {
+        saved = false;
+        OpenSavedGame(fileName);
+    }
+
     void OpenSavedGame(string filename)
     {
-        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-        savedGameClient.OpenWithAutomaticConflictResolution(filename, DataSource.ReadCacheOrNetwork,
-            ConflictResolutionStrategy.UseLongestPlaytime, OnSavedGameOpened);
+        if (!editorMode)
+        {
+            ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+            savedGameClient.OpenWithAutomaticConflictResolution(filename, DataSource.ReadCacheOrNetwork,
+                ConflictResolutionStrategy.UseLongestPlaytime, OnSavedGameOpened);
+        }
+        else
+        {
+            mTotalPlayingTime = playedTimeLocal.Add(DateTime.Now.Subtract(startTime));
+            SaveLocal<Database>(gameData, mTotalPlayingTime);
+        }
     }
 
     public void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
     {
         if (status == SavedGameRequestStatus.Success)
         {
+            status_ui_txt.text = "Success opening saved game";
             if (initialization && !saving)
             {
-                status_ui_txt.text += "Success opening saved game";
                 initialization = false;
-                if (game.TotalTimePlayed.TotalSeconds < 1 )
-                {
-                    // no save on cloud.
-                    status_ui_txt.text += " - Nothing on cloud.";
-                    status_ui_txt.text += game.TotalTimePlayed.TotalSeconds.ToString();
+                if (game.TotalTimePlayed.TotalSeconds < 1)
                     firstTimeCloud = true;
-                    //add first save to cloud if local save is empty too
-                    if (firstTimeLocal)
-                    {
-                        status_ui_txt.text += " - First time local.";
-                        saving = true;
-                        SaveGame(game, Serialize<Database>(gameData), mTotalPlayingTime.Add(DateTime.Now.Subtract(mStartTime)));
-                        SaveLocal<Database>(gameData);
-                    }
-                    else
-                    {
-                        status_ui_txt.text += " - rading local and saving to cloud.";
-                        gameData = LoadLocal<Database>();
-                        SaveGame(game, Serialize<Database>(gameData), mTotalPlayingTime.Add(DateTime.Now.Subtract(mStartTime)));
-                        //read local save and write it to cloud
-                    }
-                }
-                else
+                status_ui_txt.text += game.TotalTimePlayed.TotalSeconds.ToString();
+
+                if (!firstTimeCloud && !firstTimeLocal)
                 {
-                    status_ui_txt.text += " - found save on cloud... Loading...";
-                    //read game save - only called if successful authentication.
-                    LoadGameData(game); // ---------------------------------------------------------------------------------- Need to compare which save is older.
+                    if (game.TotalTimePlayed.TotalSeconds >= playedTimeLocal.TotalSeconds)
+                        LoadGameData(game);
+                    status_ui_txt.text += " - Both saves exist. ";
                 }
+                else if(!firstTimeCloud)
+                {
+                    LoadGameData(game);
+                    status_ui_txt.text += " - Loading from cloud. ";
+                }
+                else 
+                    SaveGame(game, Serialize<Database>(gameData), mTotalPlayingTime);
 
             }
-            else 
+            else if(!saving)
             {
                 saving = true;
-                SaveGame(game, Serialize<Database>(gameData), mTotalPlayingTime.Add(DateTime.Now.Subtract(mStartTime)));
-                SaveLocal<Database>(gameData);
+                if (game.TotalTimePlayed.TotalSeconds > playedTimeLocal.TotalSeconds)
+                    mTotalPlayingTime = game.TotalTimePlayed.Add(DateTime.Now.Subtract(startTime));
+                else
+                    mTotalPlayingTime = playedTimeLocal.Add(DateTime.Now.Subtract(startTime));
+
+                SaveLocal<Database>(gameData, mTotalPlayingTime);
+                SaveGame(game, Serialize<Database>(gameData), mTotalPlayingTime);   
             }
-            // handle reading or writing of saved game.
         }
-        else
+        else if(!saving)
         {
+            status_ui_txt.text = " error in opening cloud save. - Working with local "; /// Do stuff if didn't connect
             if (initialization)
             {
-                gameData = LoadLocal<Database>();
                 initialization = false;
+                SceneManager.LoadScene(1);
             }
             else
-                 SaveLocal<Database>(gameData);
-                // handle error
-                status_ui_txt.text += "error in read/write cloud of save game. - saved to local"; /// Do stuff if didn't connect
+                SaveLocal<Database>(gameData,playedTimeLocal);    
         }
     }
-    // Stuff that opens save---------------------------------------------------------------------------
     #endregion
 
 
-    #region SaveGameData
-    // Stuff that saves game data---------------------------------------------------------------------------
+    #region SaveGameData Cloud  
     void SaveGame(ISavedGameMetadata game, byte[] savedData, TimeSpan totalPlaytime)
     {
         ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
@@ -157,8 +164,12 @@ public class SaveLoadManager : MonoBehaviour {
     {
         if (status == SavedGameRequestStatus.Success)
         {
-            status_ui_txt.text += "Success saving to cloud"; 
+            status_ui_txt.text += "Success saving to cloud";
             // handle reading or writing of saved game.
+            saved = true;
+            saving = false;
+            if (firstTimeCloud)
+                SceneManager.LoadScene(1);
         }
         else
         {
@@ -166,12 +177,10 @@ public class SaveLoadManager : MonoBehaviour {
             // handle error
         }
     }
-    // Stuff that saves game data---------------------------------------------------------------------------
     #endregion
 
 
-    #region ReadSavedData
-    // Stuff that reads game data---------------------------------------------------------------------------
+    #region ReadSavedData Cloud
     void LoadGameData(ISavedGameMetadata game)
     {
         ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
@@ -184,8 +193,9 @@ public class SaveLoadManager : MonoBehaviour {
         if (status == SavedGameRequestStatus.Success)
         {
             // handle processing the byte array data
-
-            mStartTime = DateTime.Now;
+            gameData = Deserialize<Database>(data);
+            status_ui_txt.text += " Received data from cloud ";
+            SceneManager.LoadScene(1);
         }
         else
         {
@@ -200,19 +210,19 @@ public class SaveLoadManager : MonoBehaviour {
     public static byte[] Serialize<T>(T obj)
     {
         if (obj == null)
-        {
             return null;
-        }
         BinaryFormatter bf = new BinaryFormatter();
-        MemoryStream ms = new MemoryStream();
-        bf.Serialize(ms, obj);
-        return ms.ToArray();
+        using (MemoryStream ms = new MemoryStream())
+        {
+            bf.Serialize(ms, obj);
+            return ms.ToArray();
+        }
     }
 
     public static T Deserialize<T>(byte[] byteArray) where T : class
     {
         if (byteArray == null)
-        {
+        { 
             return null;
         }
         BinaryFormatter bf = new BinaryFormatter();
@@ -225,28 +235,73 @@ public class SaveLoadManager : MonoBehaviour {
     #endregion
 
 
-
+    #region Save/Load Local
     private T LoadLocal<T>() where T : class
     {
-        if (firstTimeLocal)
+        string localDataStr = PlayerPrefs.GetString(fileName);
+        byte[] localByteArr = System.Convert.FromBase64String(localDataStr);
+        playedTimeLocal.Add(new TimeSpan(0, 0, PlayerPrefs.GetInt("TimePlayed")));
+        return Deserialize<T>(localByteArr);
+    }
+
+    void SaveLocal<T>( T data, TimeSpan TimePlayed) {
+        byte[] localByteArr = Serialize<Database>(gameData);
+        string localDataStr = System.Convert.ToBase64String(localByteArr);
+        PlayerPrefs.SetInt("TimePlayed", (int)TimePlayed.TotalSeconds);
+        PlayerPrefs.SetString(fileName, localDataStr);
+        PlayerPrefs.Save();
+        saving = false;
+        PlayerPrefs.Save();
+        status_ui_txt.text = " Success saving to local ";
+    }
+
+
+    private void TryLoadLocal()
+    {
+        //tells us if it's the first time that this game has been launched after install
+        if (!PlayerPrefs.HasKey("IsFirstTime")) 
         {
-            SaveLocal<Database>(gameData);
+            Debug.Log("firstTime");
+            PlayerPrefs.SetInt("IsFirstTime", 1);
+            PlayerPrefs.SetInt("TimePlayed", 0);
+            PlayerPrefs.SetString(fileName, "0");
+            firstTimeLocal = true;
+            SaveLocal<Database>(gameData, new TimeSpan(0,0,0));
         }
         else
         {
-            string localDataStr = PlayerPrefs.GetString(fileName);
-            byte[] localByteArr = Encoding.ASCII.GetBytes(localDataStr);
-            return Deserialize<T>(localByteArr);
+            gameData = LoadLocal<Database>();
         }
-        return null;
     }
 
-    void SaveLocal<T>( T data) {
-        byte[] localByteArr = Serialize<Database>(gameData);
-        string localDataStr = Encoding.ASCII.GetString(localByteArr);
-        PlayerPrefs.SetString(fileName, localDataStr);
-        //- also save timeplayed.
+
+    #endregion
+
+    #region DeleteCloud
+    void DeleteGameData(string filename)
+    {
+        // Open the file to get the metadata.
+        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+        savedGameClient.OpenWithAutomaticConflictResolution(filename, DataSource.ReadCacheOrNetwork,
+            ConflictResolutionStrategy.UseLongestPlaytime, DeleteSavedGame);
     }
+
+    public void DeleteSavedGame(SavedGameRequestStatus status, ISavedGameMetadata game)
+    {
+        if (status == SavedGameRequestStatus.Success)
+        {
+            ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+            savedGameClient.Delete(game);
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            // handle error
+        }
+    }
+    #endregion
+
+
 
 
 }

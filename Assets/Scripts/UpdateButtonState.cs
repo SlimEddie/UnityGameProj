@@ -10,7 +10,7 @@ public class UpdateButtonState : MonoBehaviour {
  
     
 	void Start () {
-        this.GetComponent<Button>().interactable = GameObject.Find("_ScriptSlave").GetComponent<DataManager>().FetchLevelState(LevelId);
+    //    this.GetComponent<Button>().interactable = GameObject.Find("_ScriptSlave").GetComponent<DataManager>().FetchLevelState(LevelId);
 	}
 
     public void LoadLevel()

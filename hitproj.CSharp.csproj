@@ -425,8 +425,6 @@
     <Compile Include="Assets\Scripts\CameraSize.cs" />
     <Compile Include="Assets\Scripts\G_Play\CloudVariables.cs" />
     <Compile Include="Assets\Scripts\GameSavingScripts\Database.cs" />
-    <Compile Include="Assets\Scripts\GameSavingScripts\DataManager.cs" />
-    <Compile Include="Assets\Scripts\GameSavingScripts\FileManager.cs" />
     <Compile Include="Assets\Scripts\GameSavingScripts\SaveLoadManager.cs" />
     <Compile Include="Assets\Scripts\LevelBehaviorScripts\LevelBehavior.cs" />
     <Compile Include="Assets\Scripts\LevelBehaviorScripts\LevelDatabase.cs" />
@@ -461,6 +459,7 @@
     <None Include="Assets\Plugins\Android\gpgs-plugin-support-0.9.42\res\values-v11\values-v11.xml" />
     <None Include="Assets\Plugins\Android\gpgs-plugin-support-0.9.42\res\values-v14\values-v14.xml" />
     <None Include="Assets\Plugins\Android\gpgs-plugin-support-0.9.42\res\values\values.xml" />
+    <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\UI Assets\Spritesheet\uipack_rpg_sheet.xml" />
     <None Include="Assets\UI Assets\license.txt" />
   </ItemGroup>

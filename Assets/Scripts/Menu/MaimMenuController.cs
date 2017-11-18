@@ -8,7 +8,7 @@ public class MaimMenuController : MonoBehaviour {
     public Animator LevelMenuAnimator;
     public Animator SubMenuAnimator;
     private bool InMainMenu = true;
-    public DataManager Data_M;
+    //public DataManager Data_M;
     
 
     void FixedUpdate()
@@ -48,8 +48,8 @@ public class MaimMenuController : MonoBehaviour {
                 }
             case 4: //Next level buttons
                 {
-                    Data_M.D_Base.UlockedLevel++;// Current scene
-                    Data_M.SaveTheGame();
+                   // Data_M.D_Base.UlockedLevel++;// Current scene
+                   // Data_M.SaveTheGame();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
                     break;
                 }
