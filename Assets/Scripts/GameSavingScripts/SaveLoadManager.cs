@@ -32,18 +32,13 @@ public class SaveLoadManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
         status_ui_txt.text = "Connecting to Google play games";
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
-
-        PlayerPrefs.DeleteAll();
-        //Records start of the session for play time keeping.
         startTime = DateTime.Now;
-
-        //Try to load local here
+        //PlayerPrefs.DeleteAll();
         TryLoadLocal();
 
         Social.localUser.Authenticate((bool success) => {
@@ -63,7 +58,6 @@ public class SaveLoadManager : MonoBehaviour {
                 editorMode = true;
                 status_ui_txt.text = "Unable to connect to Google play games or in editor. Loading game.";
                 SceneManager.LoadScene(1);
-
             }
         });
     }
@@ -234,7 +228,6 @@ public class SaveLoadManager : MonoBehaviour {
     }
     #endregion
 
-
     #region Save/Load Local
     private T LoadLocal<T>() where T : class
     {
@@ -252,7 +245,6 @@ public class SaveLoadManager : MonoBehaviour {
         PlayerPrefs.Save();
         saving = false;
         PlayerPrefs.Save();
-        status_ui_txt.text = " Success saving to local ";
     }
 
 
@@ -261,7 +253,6 @@ public class SaveLoadManager : MonoBehaviour {
         //tells us if it's the first time that this game has been launched after install
         if (!PlayerPrefs.HasKey("IsFirstTime")) 
         {
-            Debug.Log("firstTime");
             PlayerPrefs.SetInt("IsFirstTime", 1);
             PlayerPrefs.SetInt("TimePlayed", 0);
             PlayerPrefs.SetString(fileName, "0");
@@ -273,8 +264,6 @@ public class SaveLoadManager : MonoBehaviour {
             gameData = LoadLocal<Database>();
         }
     }
-
-
     #endregion
 
     #region DeleteCloud

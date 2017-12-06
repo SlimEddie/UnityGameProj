@@ -151,8 +151,6 @@ public class UnitBehavior : MonoBehaviour {
         // move it to target detection or smth to prevent constant calls to get component
 
         /*DO SOME WORKING HERE*/
-
-
     }
 
     private void SpawnArrow()
@@ -178,6 +176,7 @@ public class UnitBehavior : MonoBehaviour {
     {
         this.gameObject.tag = "Dead";
         AgroTrigger.SetActive(false);
+        this.GetComponent<BoxCollider2D>().enabled = false;
     }
     
 
